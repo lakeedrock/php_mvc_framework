@@ -26,7 +26,7 @@
 
       //Create PDO instance
       try {
-        $this->dsn = new PDO($dsn, $this->user, $this->pass, $options);
+        $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
       } catch (PDOException $e) {
         $this->error = $e->getMessage();
         echo $this->error;
@@ -60,21 +60,21 @@
       $this->statement->bindValues($param,$value,$dataType);
     }
 
-    //Excecute the prepared statement
-    public function excecute(){
-      return $this->statement->excecute();
+    //Execute the prepared statement
+    public function execute(){
+      return $this->statement->execute();
     }
 
     //Get result set as array of Objects
     public function resultSet(){
-      $this->excecute();
+      $this->execute();
       return $this->statement->fetchAll(PDO::FETCH_OBJ);
     }
 
 
     // Get single record as Object
     public function singleResult(){
-      $this->excecute();
+      $this->execute();
       return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
