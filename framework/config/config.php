@@ -1,6 +1,6 @@
 <?php
 //Base URL
-define('BASE_URL',"http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+define('BASE_URL',"http://$_SERVER[HTTP_HOST]/php_mvc_framework/");
 //Application URL
 define('APP_URL',dirname(dirname(__FILE__)));
 // Application Name
