@@ -34,7 +34,7 @@
     }
 
     //Prepare Statement With Query
-    public function Query($sql){
+    public function query($sql){
       $this->statement = $this->dbh->prepare($sql);
     }
 
